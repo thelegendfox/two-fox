@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-*{
-    font-family: 'Open Sans', 'Times New Roman';
+@import url('https://cdn.jsdelivr.net/npm/@fontsource/cascadia-code@4.2.1/index.min.css');
+* {
+    font-family: 'Cascadia Code', monospace, system-ui;
 }

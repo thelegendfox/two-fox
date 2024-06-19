@@ -3,5 +3,17 @@
     background-color: rgb(15, 15, 15);
 }
 .link {
-    color: rgb(62, 166, 255)
+    color: rgb(62, 166, 255);
+}
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: dotted;
 }
