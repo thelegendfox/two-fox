@@ -2,30 +2,20 @@
     display: flex;
     flex-direction: row;
     background-color: rgb(50,50,50);
-    padding: 4px;
-}
-.header2 {
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(50,50,50);
-}
-.text1 {
-    display:flex;
+    padding: 0;
+    margin:0;
+    gap:0;
     align-items: center;
-    justify-content: left;
-    background-color: rgb(50,50,50);
 }
-.text2 {
+.left-links {
     display:flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: left;
     background-color: rgb(50,50,50);
+    padding: 1px;
+    margin:1px;
+    gap:1px;
 }
-
-.hide {
-    display:none;
-}
-.hoverlist:hover + #hiddenlist {
-    display: block;
-    color:red;
+.small {
+    font-size: 13px;
 }
