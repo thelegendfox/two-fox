@@ -19,3 +19,6 @@
 .small {
     font-size: 13px;
 }
+.dropdown {
+    border: none;
+}
