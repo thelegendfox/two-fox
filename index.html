@@ -10,7 +10,6 @@
     <title>Two-Fox Home</title>
 </head>
 <body>
-    <script src="main/js/home-script.js"></script>
     <!-- TOP NAVIGATION BAR -->
     <div class="header">
         <h2 class="header">&nbsp;LEGENDFOX&nbsp; | &nbsp;</h2> <!--legendfox header-->
@@ -35,12 +34,11 @@
         <!-- links end -->
         <h2 class="header">&nbsp; | &nbsp;</h2>
         <!-- dropdown -->
-         <form action="main/recipes/" method="post" target="_blank">
-            <select class="dropdown" onchange="">
-                <option value="www.google.com" class="dropdown"><a class="header link" href="main/recipes/main.html">Test</a></option>
-                <option value="test2" class="dropdown">Test2</option>
-            </select>
-         </form>
+        <div class="header dropdown" id="redirect-test">
+            <button onclick="redirectToPage">tset</button>
+
+
+        </div>
         <!-- <h2 class="header">HOME</h2> --> <!--not used on home page but usually should direct to home-->
         <!-- <h2 class="header">&nbsp; | &nbsp;</h2> -->
     </div>
@@ -48,5 +46,7 @@
     <h1>Legendfox Two-Fox Home Page</h1>
     <p>Hello! Welcome to the Legendfox home page for my twoFOX repository. I am currently on the Odin Project course. This will be improved over time as my
     coding skills get better.<br>  An archive of what the site looked like at different times can be viewed on the top bar.</p>
+    <button onclick="redirectToPage()">test</button>
+    <script src="main/js/home-script.js"></script>
 </body>
 </html>
