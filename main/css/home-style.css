@@ -1,4 +1,12 @@
-.header {
+
+
+
+
+
+
+
+
+/* .header {
     display: flex;
     flex-direction: row;
     background-color: rgb(50,50,50);
@@ -14,11 +22,4 @@
     background-color: rgb(50,50,50);
     padding: 1px;
     margin:1px;
-    gap:1px;
-}
-.small {
-    font-size: 13px;
-}
-.dropdown {
-    border: none;
-}
+    gap:1px;*/
