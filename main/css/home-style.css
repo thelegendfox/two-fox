@@ -1,5 +1,5 @@
-.body {
-    display: flex;
+button {
+    cursor: pointer;
 }
 
 .header {
