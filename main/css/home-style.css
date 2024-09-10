@@ -2,47 +2,6 @@ button {
     cursor: pointer;
 }
 
-.header {
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(50,50,50);
-    align-items: center;
-    height: 75px;
-    padding: 8px 20px 8px 20px;
-}
-
-.header-subtext {
-    display: flex;
-    background-color: rgb(50,50,50);
-}
-
-.small-image {
-    padding-right: 20px;
-    width: 5%;
-    height: auto;
-}
-
-.right-links {
-    display: flex;
-    flex-direction: row;
-    padding-left: 20px;
-}
-
-.right-links-container {
-    display: flex;
-    flex-direction: row;
-    margin-left: auto;
-}
-
-.line-break {
-    display: flex;
-    background-color: #eee;
-    width: 100%;
-    margin: 10px 0px 10px 0px;
-    border: none;
-    height: 1px;
-}
-
 .main-page-container {
     display: flex;
     flex-direction: row;
@@ -89,10 +48,12 @@ button {
     display: flex;
     height: 100px;
     width: 100px;
-    border: 2px solid white;
+    border: 2px solid #3882F6;
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
+    justify-content: center;
+    align-items: center;
 }
 
 /*

@@ -1,4 +1,4 @@
-/*this is really ugly but i dont know another way*/
+/*this is eventually gonna be really ugly but i dont know another way*/
 /*sorry*/
 
 let page1Button = document.getElementById("page1").value;
@@ -8,5 +8,8 @@ function redirectToPage() {
  console.log("redirected")
 }
 
-
-console.log(page1Button + " <<- this is the page1Button value"); /*remove before release*/
+function redirectDropdownPage() {
+    var dropdown = document.getElementById("redirectDropdown");
+    var selectedValue = dropdown.value;
+        window.location.href = selectedValue;
+}

@@ -4,58 +4,63 @@
     <link rel="stylesheet" href="./main/css/stylefont.css">
     <link rel="stylesheet" href="./main/css/darkmode.css">
     <link rel="stylesheet" href="./main/css/home-style.css">
+    <link rel="stylesheet" href="./main/css/header.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Two-Fox Home</title>
 </head>
 <body>
 
+    <!-- Header Start -->
+
     <div class="header">
         <img class="image small-image header-subtext" src="./home/images/senkofirst.gif" alt="Senko-san, a silly fox. Gif found at Tenor">
         <h1 class="header-subtext">Legendfox</h1>
             <div class="header-subtext right-links-container">
-                <p class="header-subtext right-links link">TBD Link</p> <!--maybe a list, later? for all of these-->
-                <p class="header-subtext right-links link">TBD Link</p>
-                <p class="header-subtext right-links link">TBD Link</p>
-                <p class="header-subtext right-links link">TBD Link</p>
-                <p class="header-subtext right-links link">TBD Link</p>
-                <p class="header-subtext right-links link">TBD Link</p>
+                <a href="home/archive.html" class="header-subtext right-links link">Archive</a>
+                <select id="redirectDropdown" onchange="redirectDropdownPage()" class="header-subtext right-links link">
+                    <option value="index.html">Main Home Page</option>
+                    <option value="main/recipes/main.html">Recipes</option>
+                    <option value="main/landing-page/index.html">Landing Page</option>
+                </select>
             </div>
     </div>
 
     <div class="line-break"></div>
 
+    <!-- Header End -->
+
     <div class="main-page-container">
         <div class="text-container">
             <p class="text">Hello! Welcome to the Legendfox home page for my twoFOX repository. I am currently on the Odin Project course. This will be improved over time as my
             coding skills get better.<br> An archive of what the site looked like at different times can be viewed on the top bar.</p>
+            <p class="text">We're undergoing constant improvement. Thank you!</p>
         </div>
         <div class="active-container">
             <h2 class="info-subtext">Active Projects</h2>
-            <button class="line-break"></button>
-            <button class="info-box">test</button>
-            <button class="line-break"></button>
-            <button class="info-box">test</button>
-            <button class="line-break"></button>
-            <button class="info-box">test</button>
-            <button class="line-break"></button>
-            <button class="info-box">test</button>
-            <button class="line-break"></button>
+            <div class="line-break"></div>
+            <button class="info-box"></button>
+            <div class="line-break"></div>
+            <button class="info-box"></button>
+            <div class="line-break"></div>
+            <button class="info-box"></button>
+            <div class="line-break"></div>
+            <button class="info-box"></button>
+            <div class="line-break"></div>
         </div>
         <div class="complete-container">
             <h2 class="info-subtext">Completed Projects</h2>
-            <button class="line-break"></button>
-            <button class="info-box">test</button>
-            <button class="line-break"></button>
-            <button class="info-box">test</button>
-            <button class="line-break"></button>
-            <button class="info-box">test</button>
-            <button class="line-break"></button>
-            <button class="info-box">test</button>
-            <button class="line-break"></button>
+            <div class="line-break"></div>
+            <button class="info-box" id="page1" value="main/landing-page/index.html" onclick="redirectToPage()">Landing Page</button>
+            <div class="line-break"></div>
+            <button class="info-box"></button>
+            <div class="line-break"></div>
+            <button class="info-box"></button>
+            <div class="line-break"></div>
+            <button class="info-box"></button>
+            <div class="line-break"></div>
         </div>
     </div>
-<button value="www.google.com" id="page1" onclick="redirectToPage()">testsetadgadtasdt</button>
 
     <script src="main/js/home-script.js"></script>
 </body>
