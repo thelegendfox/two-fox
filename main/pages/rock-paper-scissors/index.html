@@ -1,13 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<link rel="stylesheet" href="../main/css/darkmode.css" />
-		<link rel="stylesheet" href="../main/css/stylefont.css" />
+		<link rel="stylesheet" href="../../css/darkmode.css" />
+		<link rel="stylesheet" href="../../css/stylefont.css" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="../../css/header.css" />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Rock-Paper-Scissors</title>
 	</head>
 	<body>
+		<div class="header">
+			<img
+				class="image small-image header-subtext"
+				src="../../../home/images/senkofirst.gif"
+				alt="Senko-san, a silly fox. Gif found at Tenor"
+			/>
+			<h1 class="header-subtext">Legendfox</h1>
+			<div class="header-subtext right-links-container">
+				<a href="home/archive.html" class="header-subtext right-links link"
+					>Archive</a
+				>
+				<select
+					id="redirectDropdown"
+					onchange="redirectDropdownPage()"
+					class="header-subtext right-links link"
+				>
+					<option value="index.html">Main Home Page</option>
+					<option value="main/pages/recipes/main.html">Recipes</option>
+					<option value="main/pages/landing-page/index.html">
+						Landing Page
+					</option>
+					<option value="main/pages/rock-paper-scissors/index.html">
+						Rock Paper Scissors
+					</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="line-break"></div>
+		<div class="boxes">
+			<div class="button-box">
+				<div class="horizontal-box">
+					<button class="horizontal">test</button>
+					<button class="horizontal mid-button">test</button>
+					<button class="horizontal">test</button>
+				</div>
+				<div class="vertical-box">
+					<button class="vertical">test</button>
+					<button class="vertical">test</button>
+				</div>
+			</div>
+			<div class="text-box"></div>
+		</div>
+
+		<script src="../../js/home-script.js"></script>
 		<script src="style.js"></script>
 	</body>
 </html>

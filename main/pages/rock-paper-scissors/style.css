@@ -1,0 +1,57 @@
+html,
+body {
+	height: 100%;
+}
+.boxes {
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+}
+.button-box {
+	display: flex;
+	flex-direction: row;
+	width: 40%;
+	height: 50%;
+	border: 2px solid white;
+	padding: 20px;
+	border-radius: 15px;
+}
+.text-box {
+	display: flex;
+	flex-direction: column;
+	width: 55%;
+	margin-left: 20px;
+	height: 50%;
+	border: 2px solid white;
+	padding: 20px;
+	border-radius: 15px;
+}
+.horizontal-box {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.horizontal {
+	height: 30%;
+	width: 60%;
+	border: 2px solid white;
+	border-radius: 20px;
+}
+.mid-button {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.vertical-box {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: right;
+}
+.vertical {
+	height: 60%;
+	width: 30%;
+	border: 2px solid white;
+	border-radius: 20px;
+}
