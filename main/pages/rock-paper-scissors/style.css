@@ -2,6 +2,9 @@ html,
 body {
 	height: 100%;
 }
+button {
+	cursor: pointer;
+}
 .boxes {
 	height: 100%;
 	display: flex;
@@ -34,7 +37,7 @@ body {
 }
 .horizontal {
 	height: 30%;
-	width: 60%;
+	width: 100%;
 	border: 2px solid white;
 	border-radius: 20px;
 }
@@ -48,10 +51,16 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: right;
+	margin-left: auto;
+	justify-content: right;
 }
 .vertical {
-	height: 60%;
-	width: 30%;
+	height: 49%;
+	width: 45%;
 	border: 2px solid white;
 	border-radius: 20px;
+	margin-top: auto;
+	margin-bottom: auto;
 }
+
+/* need to make vertical buttons go on the right */
