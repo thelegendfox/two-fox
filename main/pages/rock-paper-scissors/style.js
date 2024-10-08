@@ -1,5 +1,7 @@
 let humanScore = 0;
 let computerScore = 0;
+let gameRunning = 0;
+let formLabel = document.getElementById("formLabel");
 
 function getComputerChoice() {
 	var randomChoice = Math.floor(Math.random() * (4 - 1) + 1);
@@ -32,7 +34,7 @@ function getHumanChoice() {
 	} else {
 		console.log(
 			"Human Chooses: " +
-				humanChoice.charAt(0).toUpperCase() +
+				humanChoice.toLowerCase().charAt(0).toUpperCase() +
 				humanChoice.slice(1) +
 				"!"
 		);
@@ -80,7 +82,18 @@ function determineScore() {
 }
 
 //make these buttons
+
+function playGameButton() {
+	if (gameRunning == 0) {
+		playGame();
+	} else {
+		/*something happens that says nuh uh*/
+	}
+}
+
 function playGame() {
+	gameRunning = 1;
+
 	console.log("The game is afoot!");
 	playRound();
 	determineScore();
@@ -109,4 +122,7 @@ function playGame() {
 	} else if (humanScore > 5) {
 		console.log("You lose! We don't allow cheaters here.");
 	}
+	humanScore = 0;
+	computerScore = 0;
+	gameRunning = 0;
 }

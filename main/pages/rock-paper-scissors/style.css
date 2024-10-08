@@ -30,7 +30,7 @@ button {
 	border-radius: 15px;
 }
 .horizontal-box {
-	width: 50%;
+	width: 80%;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -40,6 +40,7 @@ button {
 	width: 100%;
 	border: 2px solid white;
 	border-radius: 20px;
+	margin-right: auto;
 }
 .mid-button {
 	margin-top: 20px;
@@ -55,12 +56,11 @@ button {
 	justify-content: right;
 }
 .vertical {
-	height: 49%;
+	height: 45%;
 	width: 45%;
 	border: 2px solid white;
 	border-radius: 20px;
 	margin-top: auto;
 	margin-bottom: auto;
+	margin-left: auto;
 }
-
-/* need to make vertical buttons go on the right */
