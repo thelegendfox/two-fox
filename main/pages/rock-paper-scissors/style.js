@@ -1,7 +1,19 @@
 let humanScore = 0;
 let computerScore = 0;
-let gameRunning = 0;
+let contextResult = "";
+let gameRunning = 5;
 let formLabel = document.getElementById("formLabel");
+
+function playGameButton() {
+	if (gameRunning > 0) {
+		playHtmlGame();
+	}
+}
+
+function newRoundButton() {
+	playRound();
+	gameRunning--;
+}
 
 function getComputerChoice() {
 	var randomChoice = Math.floor(Math.random() * (4 - 1) + 1);
@@ -52,27 +64,44 @@ function computerVictory() {
 function playRound() {
 	let humanChoice = getHumanChoice();
 	let computerChoice = getComputerChoice();
+
 	if (humanChoice == "rock" && computerChoice == "scissors") {
 		console.log("You win! Rock beats Scissors!");
-		return humanVictory();
+		contextResult = "You win! Rock beats Scissors!";
+		humanScore++;
+		result = 1;
 	} else if (humanChoice == "paper" && computerChoice == "rock") {
 		console.log("You win! Paper beats Rock!");
-		return humanVictory();
+		contextResult = "You win! Paper beats Rock!";
+		humanScore++;
+		result = 2;
 	} else if (humanChoice == "scissors" && computerChoice == "paper") {
 		console.log("You win! Scissors beats Paper!");
-		return humanVictory();
+		contextResult = "You win! Scissors beats Paper!";
+		humanScore++;
+		result = 3;
 	} else if (humanChoice == "rock" && computerChoice == "paper") {
 		console.log("You lose! Paper beats Rock!");
-		return computerVictory();
+		contextResult = "You lose! Paper beats Rock!";
+		computerScore++;
+		result = 4;
 	} else if (humanChoice == "paper" && computerChoice == "scissors") {
 		console.log("You lose! Scissors beats Paper!");
-		return computerVictory();
+		contextResult = "You lose! Scissors beats Paper!";
+		computerScore++;
+		result = 5;
 	} else if (humanChoice == "scissors" && computerChoice == "rock") {
 		console.log("You lose! Rock beats Scissors!");
-		return computerVictory();
+		contextResult = "You lose! Rock beats Scissors!";
+		computerScore++;
+		result = 6;
 	} else if (humanChoice == computerChoice) {
-		"It's a draw! " + humanChoice + "is the same as" + computerChoice + "!";
-		return 0;
+		console.log(
+			"It's a draw! " + humanChoice + "is the same as" + computerChoice + "!"
+		);
+		contextResult =
+			"It's a draw! " + humanChoice + "is the same as" + computerChoice + "!";
+		result = 7;
 	}
 }
 
@@ -83,17 +112,7 @@ function determineScore() {
 
 //make these buttons
 
-function playGameButton() {
-	if (gameRunning == 0) {
-		playGame();
-	} else {
-		/*something happens that says nuh uh*/
-	}
-}
-
 function playGame() {
-	gameRunning = 1;
-
 	console.log("The game is afoot!");
 	playRound();
 	determineScore();
@@ -119,10 +138,15 @@ function playGame() {
 		console.log("You win! Want to play again?");
 	} else if (humanScore == computerScore) {
 		("It's a draw! I don't know if that's unlucky or lucky. Want to play again?");
-	} else if (humanScore > 5) {
-		console.log("You lose! We don't allow cheaters here.");
 	}
-	humanScore = 0;
-	computerScore = 0;
-	gameRunning = 0;
+}
+
+function playHtmlGame() {
+	//text content: The game is affoot, all that stuff above, connect it to PlayRound and the round playing button
+	let roundsRemainingText = document.getElementById("rounds-remaining-text");
+	let roundsRemaining = 5;
+
+	playRound();
+	roundsRemaining--;
+	roundsRemainingText.textContent = "Rounds remaining: " + roundsRemaining;
 }
