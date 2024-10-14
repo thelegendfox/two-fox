@@ -1,8 +1,19 @@
+// New goal: just make it so you have infinite rounds in the HTML game and just count UP. Then add a button that ends the game and shows the final result and who won.
+
 let humanScore = 0;
 let computerScore = 0;
 let contextResult = "";
+let contextComputerChoice = "";
+let contextHumanChoice = "";
 let gameRunning = 5;
 let formLabel = document.getElementById("formLabel");
+let roundsRemainingText = document.getElementById("rounds-remaining-text");
+let roundsRemaining = 5;
+let htmlText1 = document.getElementById("text1");
+let htmlText2 = document.getElementById("text2");
+let htmlText3 = document.getElementById("text3");
+let htmlText4 = document.getElementById("text4");
+let htmlText5 = document.getElementById("text5");
 
 function playGameButton() {
 	if (gameRunning > 0) {
@@ -19,12 +30,15 @@ function getComputerChoice() {
 	var randomChoice = Math.floor(Math.random() * (4 - 1) + 1);
 	if (randomChoice === 1) {
 		console.log("Computer Chooses: Rock! " + randomChoice);
+		contextComputerChoice = "Computer Chooses: Rock!";
 		return "rock";
 	} else if (randomChoice === 2) {
 		console.log("Computer Chooses: Paper! " + randomChoice);
+		contextComputerChoice = "Computer Chooses: Paper!";
 		return "paper";
 	} else if (randomChoice === 3) {
 		console.log("Computer Chooses: Scissors! " + randomChoice);
+		contextComputerChoice = "Computer Chooses: Paper!";
 		return "scissors";
 	}
 }
@@ -143,8 +157,6 @@ function playGame() {
 
 function playHtmlGame() {
 	//text content: The game is affoot, all that stuff above, connect it to PlayRound and the round playing button
-	let roundsRemainingText = document.getElementById("rounds-remaining-text");
-	let roundsRemaining = 5;
 
 	playRound();
 	roundsRemaining--;
