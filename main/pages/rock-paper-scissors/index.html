@@ -10,6 +10,7 @@
 		<title>Rock-Paper-Scissors</title>
 	</head>
 	<body>
+		<script>0</script>
 		<div class="header">
 			<img
 				class="image small-image header-subtext"
@@ -31,23 +32,21 @@
 		<div class="boxes">
 			<div class="button-box">
 				<div class="horizontal-box">
-					<button class="horizontal">test</button>
-					<button class="horizontal mid-button" onclick="playGameButton()">
+					<button class="horizontal" onclick="playGameButton()">
 						Play Game
 					</button>
-					<button class="horizontal">test</button>
+					<button class="horizontal" onclick="endGameButton()">End Game</button>
 				</div>
 				<div class="vertical-box">
-					<button class="vertical">Next Round</button> <!--make button to advance to next round. use javascript for this too-->
+					<button class="vertical" onclick="newRoundButton()">Next Round</button>
 				</div>
 			</div>
 			<div class="text-box">
-				<div class="js-text" id="rounds-remaining">test</div>
-				<div class="js-text" id="text1">test1</div>
-				<div class="js-text" id="text2">test2</div>
-				<div class="js-text" id="text3">test3</div>
-				<div class="js-text" id="text4">test4</div>
-				<div class="js-text" id="text5">test5</div>
+				<div class="js-text" id="text1">Welcome to the Legendfox Rock Paper Scissors project!</div>
+				<div class="js-text" id="text2">Hit one of these buttons on the right to play in</div>
+				<div class="js-text" id="text3">Endless mode, or open the console and input</div>
+				<div class="js-text" id="text4">"playGame()" for a 5-round tournement. Best of luck!</div>
+				<div class="js-text" id="text5"></div>
 				<!-- all of these must become things for JS to interact with -->
 			</div>
 
