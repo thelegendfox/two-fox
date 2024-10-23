@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="../../css/darkmode.css" />
+		<link rel="stylesheet" href="../../css/stylefont.css" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="../../css/header.css" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Rock-Paper-Scissors</title>
+	</head>
+	<body>
+		<script>0</script>
+		<div class="header">
+			<img
+				class="image small-image header-subtext"
+				src="../../../home/images/senkofirst.gif"
+				alt="Senko-san, a silly fox. Gif found at Tenor"
+			/>
+			<h1 class="header-subtext">Legendfox</h1>
+			<div class="header-subtext right-links-container">
+				<a href="home/archive.html" class="header-subtext right-links link"
+					>Archive</a
+				>
+				<a href="../../../index.html" class="header-subtext right-links link"
+					>Home</a
+				>
+			</div>
+		</div>
+
+		<div class="line-break"></div>
+		<div class="boxes">
+			<div class="button-box">
+				<div class="horizontal-box">
+					<button class="horizontal" onclick="playGameButton()">
+						Play Game
+					</button>
+					<button class="horizontal" onclick="endGameButton()">End Game</button>
+				</div>
+				<div class="vertical-box">
+					<button class="vertical" onclick="newRoundButton()">Next Round</button>
+				</div>
+			</div>
+			<div class="text-box">
+				<div class="js-text" id="text1">Welcome to the Legendfox Rock Paper Scissors project!</div>
+				<div class="js-text" id="text2">Hit one of these buttons on the right to play in</div>
+				<div class="js-text" id="text3">Endless mode, or open the console and input</div>
+				<div class="js-text" id="text4">"playGame()" for a 5-round tournement. Best of luck!</div>
+				<div class="js-text" id="text5"></div>
+				<!-- all of these must become things for JS to interact with -->
+			</div>
+
+		<script src="../../js/home-script.js"></script>
+		<script src="style.js"></script>
+	</body>
+</html>

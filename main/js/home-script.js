@@ -2,14 +2,20 @@
 /*sorry*/
 
 let page1Button = document.getElementById("page1").value;
+let page2Button = document.getElementById("page2").value;
 
-function redirectToPage() {
- window.location.href = page1Button;
- console.log("redirected")
+function redirectToLandingPage() {
+	window.location.href = page1Button;
+	console.log("redirected");
+}
+
+function redirectToRPSPage() {
+	window.location.href = page2Button;
+	console.log("redirected");
 }
 
 function redirectDropdownPage() {
-    var dropdown = document.getElementById("redirectDropdown");
-    var selectedValue = dropdown.value;
-        window.location.href = selectedValue;
+	var dropdown = document.getElementById("redirectDropdown");
+	var selectedValue = dropdown.value;
+	window.location.href = selectedValue;
 }

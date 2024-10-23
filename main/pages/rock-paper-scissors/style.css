@@ -1,0 +1,79 @@
+html,
+body {
+	height: 100%;
+}
+button {
+	cursor: pointer;
+}
+.boxes {
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+}
+.button-box {
+	display: flex;
+	flex-direction: row;
+	width: 40%;
+	height: 50%;
+	border: 2px solid white;
+	padding: 20px;
+	border-radius: 15px;
+}
+.text-box {
+	display: flex;
+	flex-direction: column;
+	width: 55%;
+	margin-left: 20px;
+	height: 50%;
+	border: 2px solid white;
+	padding: 20px;
+	border-radius: 15px;
+}
+.horizontal-box {
+	width: 70%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.horizontal {
+	height: 45%;
+	width: 100%;
+	border: 2px solid white;
+	border-radius: 20px;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	font-size: larger;
+}
+.mid-button {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.vertical-box {
+	width: 20%;
+	height: 90%;
+	display: flex;
+	flex-direction: column;
+	justify-content: right;
+	margin-left: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	justify-content: right;
+}
+.vertical {
+	height: 100%;
+	width: 100%;
+	border: 2px solid white;
+	border-radius: 20px;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+	font-size: larger;
+}
+.js-text {
+	margin-bottom: auto;
+	margin-top: auto;
+	height: auto;
+	width: auto;
+	font-size: 200%;
+}
