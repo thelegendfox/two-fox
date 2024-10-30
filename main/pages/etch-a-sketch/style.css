@@ -1,0 +1,29 @@
+/* needs to be centered
+ */
+
+body,
+html {
+	width: 100%;
+	height: 100%;
+}
+
+.container-alpha {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 100%;
+}
+.container {
+	margin-left: auto;
+	width: 25%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.block {
+	width: 40%;
+	aspect-ratio: 1/1;
+	border: 1px solid white;
+}
