@@ -14,16 +14,40 @@ html {
 	height: 100%;
 }
 .container {
-	margin-left: auto;
-	width: 25%;
+	width: 50%;
 	height: 100%;
+	/* margin-left: auto;
+	margin-right: auto;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	justify-content: center;
+	border: 1px solid cyan;
+	flex-wrap: wrap; */
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
 }
-.block {
-	width: 40%;
+.block-left {
+	margin-left: auto;
+	margin-right: auto;
+	width: 20%;
 	aspect-ratio: 1/1;
 	border: 1px solid white;
 }
+/* .block-far-left {
+	margin-left: auto;
+	width: 20%;
+	aspect-ratio: 1/1;
+	border: 1px solid white;
+} */
+/* .block-right {
+	width: 20%;
+	aspect-ratio: 1/1;
+	border: 1px solid white;
+} */
+/* .block-far-right {
+	margin-right: auto;
+	width: 20%;
+	aspect-ratio: 1/1;
+	border: 1px solid white;
+} */
