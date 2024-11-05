@@ -1,10 +1,3 @@
-/* needs to be centered
- */
-
-* {
-	box-sizing: border-box;
-}
-
 body,
 html {
 	width: 100vw;
@@ -18,19 +11,29 @@ html {
 	height: 100%;
 }
 .container {
-	width: 60%;
-	height: 60%;
-	flex: 0.256; /* Make this number adjustable in js based on the amount of blocks. Now to make it a horizontal rectangle */
+	width: 100%;
+	height: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: center;
+}
+.block-container {
+	/*TBD*/
 }
 .block {
-	flex: 1;
 	aspect-ratio: 1/1;
-	border: 1px solid white;
+	border-left: 1px solid white;
+	border-top: 1px solid white;
+	font-size: var(--dynamic-font-size);
+}
+.block-right {
+	border-right: 1px solid white;
+}
+.block-bottom {
+	border-bottom: 1px solid white;
 }
 .block:hover {
 	background-color: white;
