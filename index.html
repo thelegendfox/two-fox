@@ -10,6 +10,9 @@
 		<title>Two-Fox Home</title>
 	</head>
 	<body>
+		<script>
+			0;
+		</script>
 		<!-- Header Start -->
 
 		<div class="header">
@@ -36,6 +39,9 @@
 					<option value="main/pages/rock-paper-scissors/index.html">
 						Rock Paper Scissors
 					</option>
+					<option value="main/pages/etch-a-sketch/index.html">
+						Etch A Sketch
+					</option>
 				</select>
 			</div>
 		</div>
@@ -54,18 +60,6 @@
 					viewed on the top bar.
 				</p>
 				<p class="text">We're undergoing constant improvement. Thank you!</p>
-			</div>
-			<div class="active-container">
-				<h2 class="info-subtext">Active Projects</h2>
-				<div class="line-break"></div>
-				<button class="info-box"></button>
-				<div class="line-break"></div>
-				<button class="info-box"></button>
-				<div class="line-break"></div>
-				<button class="info-box"></button>
-				<div class="line-break"></div>
-				<button class="info-box"></button>
-				<div class="line-break"></div>
 			</div>
 			<div class="complete-container">
 				<h2 class="info-subtext">Completed Projects</h2>
@@ -88,7 +82,15 @@
 					Rock Paper Scissors
 				</button>
 				<div class="line-break"></div>
-				<button class="info-box"></button>
+				<button
+					class="info-box"
+					class="info-box"
+					id="page3"
+					value="main/pages/etch-a-sketch/index.html"
+					onclick="redirectToETSPage()"
+				>
+					Etch-A-Sketch
+				</button>
 				<div class="line-break"></div>
 				<button class="info-box"></button>
 				<div class="line-break"></div>
