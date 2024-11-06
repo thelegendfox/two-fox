@@ -1,10 +1,27 @@
+let blocksPerSide = 16; //this must be interactable later
+
 const sketchContainer = document.querySelector("#container");
 const alphaContainer = document.querySelector("#mainContainer");
+const resetButton = document.querySelector("#resetButton");
+
+resetButton.addEventListener("click", () => {
+	resetButtonOp();
+});
+
+function resetButtonOp() {
+	let humanPrompt = parseInt(
+		prompt("How many blocks would you like per side? 1-100!")
+	);
+	if (humanPrompt > 0 && humanPrompt < 100) {
+		blocksPerSide = humanPrompt;
+		sketchContainer.innerHTML = "Generating Grid...";
+		setTimeout(createSketchPage, 1000);
+	} else resetButtonOp();
+}
 
 /**/
 //Creating grid
 
-let blocksPerSide = 128; //this must be interactable later
 function createSketchPage() {
 	sketchContainer.innerHTML = "";
 	//creating container elements
@@ -47,6 +64,13 @@ function createSketchPage() {
 			);
 		}
 	}
+	const blocks = document.querySelectorAll(".block");
+
+	blocks.forEach((block) => {
+		block.addEventListener("mouseover", () => {
+			block.classList.add("block-hover");
+		});
+	});
 }
 /**/
 
