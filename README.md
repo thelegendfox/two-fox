@@ -1,4 +1,4 @@
-this is for my public assignments. 
+this is for my public assignments.
 <br><br>
 branch MAIN is for the posted site. i try not to experiment there.
 <br><br>
