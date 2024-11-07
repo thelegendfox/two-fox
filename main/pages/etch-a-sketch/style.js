@@ -12,7 +12,7 @@ function resetButtonOp() {
 	let humanPrompt = parseInt(
 		prompt("How many blocks would you like per side? 1-100!")
 	);
-	if (humanPrompt > 0 && humanPrompt < 100) {
+	if (humanPrompt > 0 && humanPrompt < 101) {
 		blocksPerSide = humanPrompt;
 		sketchContainer.innerHTML = "Generating Grid...";
 		setTimeout(createSketchPage, 1000);
