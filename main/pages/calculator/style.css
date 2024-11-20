@@ -1,7 +1,7 @@
 html,
 body {
-	width: 90%;
-	height: 90%;
+	width: 100%;
+	height: 100%;
 	margin: auto;
 }
 .container {
@@ -24,12 +24,35 @@ body {
 }
 .grid {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+}
+.element-box {
+	display: flex;
+	border: 1px solid pink;
+	width: 100%;
+	height: 20%;
 }
 .grid-token {
+	margin: auto;
 	border: 1px solid white;
-	flex-wrap: wrap;
-	width: 25%;
-	aspect-ratio: 2/1;
 	padding: 5px;
+	width: 22%;
+	aspect-ratio: 1.5/1;
+}
+.grid-token-1 {
+	background: blue;
+}
+.grid-token-2 {
+	background: cyan;
+}
+.grid-token-3 {
+	background: darkblue;
+}
+.grid-token-4 {
+	background: lightblue;
+}
+.grid-token-manual {
+	background: darkred;
+}
+.zero {
 }
