@@ -1,15 +1,17 @@
 function createPage() {
+	let num = 0;
 	for (let i = 0; i < 4; i++) {
 		let gridNum = i + 1;
 		let className = "grid-token-" + gridNum;
 
 		for (let j = 0; j < 4; j++) {
-			//let container = document.querySelector("#grid");
+			num++;
 			let elementBox = document.querySelector("#box-" + gridNum);
 			let element = document.createElement("div");
 			elementBox.appendChild(element);
 			element.classList.add("grid-token");
 			element.classList.add(className);
+			element.setAttribute("id", num);
 		}
 	}
 
