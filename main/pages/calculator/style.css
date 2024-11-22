@@ -16,7 +16,7 @@ body {
 }
 .display {
 	border: 1px solid white;
-	background: rgb(219, 163, 191);
+	border-radius: 5px;
 	margin: auto;
 	width: 100%;
 	height: 30%;
@@ -37,32 +37,23 @@ body {
 	width: 25%;
 	border-radius: 5px;
 	margin: 2px;
-}
-.grid-token-1 {
 	aspect-ratio: 1.5/1;
-	background: blue;
+	text-align: center;
+	font-size: 300%;
+	cursor: default;
+	background-color: black;
 }
-.grid-token-2 {
-	aspect-ratio: 1.5/1;
-	background: cyan;
-}
-.grid-token-3 {
-	aspect-ratio: 1.5/1;
-	background: darkblue;
-}
-.grid-token-4 {
-	aspect-ratio: 1.5/1;
-	background: lightblue;
-}
-.grid-token-manual {
-	width: 25%;
-	aspect-ratio: 1.5/1;
-	background: darkred;
+.number {
+	background-color: #333333;
 }
 .zero {
+	background-color: #333333;
+	cursor: default;
 	border: 1px solid white;
 	padding: 5px;
 	width: 25%;
+	font-size: 300%;
+	text-indent: -15px;
 }
 .zero-left {
 	margin: 2px 0px 2px 2px;
