@@ -1,3 +1,5 @@
+let dV = ""; //Display Value
+
 function createPage() {
 	let num = 0;
 	//Adds the grid tokens (except for the ones below)
@@ -22,11 +24,15 @@ function createPage() {
 		//element.classList.add("grid-token");
 		element.classList.add("grid-token-manual");
 		element.classList.add("zero");
+		element.setAttribute("id", "manEl" + 3);
 		if (i == 1) {
+			element.setAttribute("id", "manEl" + 3);
 			element.classList.add("zero-right");
 			element.textContent = "0";
 		} else {
+			element.setAttribute("id", "manEl" + 4);
 			element.classList.add("zero-left");
+			element.textContent = "0";
 		}
 	}
 	//Adds the 2 other manual grid tokens (. and =) and assigns text
@@ -72,4 +78,80 @@ function createPage() {
 	}
 }
 
-createPage();
+function buttonDetector() {
+	//Returns values of buttons when pressed
+	for (let i = 1; i < 17; i++) {
+		let idVal = "#el" + i;
+		let listenerItem = document.querySelector(idVal);
+		listenerItem.addEventListener("click", () => {
+			//TO BE DETERMINED
+			//alert("HelloWorld " + listenerItem.textContent);
+			//displayText += listenerItem.textContent;
+			dV = listenerItem.textContent; //Display Value
+			valueDeterminer();
+			return listenerItem.textContent;
+		});
+	}
+	for (let i = 1; i < 5; i++) {
+		let idVal = "#manEl" + i;
+		let listenerItem = document.querySelector(idVal);
+		listenerItem.addEventListener("click", () => {
+			//TO BE DETERMINED
+			//alert("HelloWorld " + listenerItem.textContent);
+			//displayText += listenerItem.textContent;
+			dV = listenerItem.textContent; //Display Value
+			valueDeterminer();
+			return listenerItem.textContent;
+		});
+	}
+}
+
+/* To Be Done: Make operators work. Make it switch nums automatically and make the operators dynamic for the = sign.*/
+
+function valueDeterminer() {
+	const display = document.querySelector("#display");
+	let determineNum = 1;
+	let numbers1 = "";
+	let numbers2 = "";
+	operator = "";
+	//Yes this is obscenely long. Sorry.
+	if (dV == "AC") {
+		display.textContent = "";
+	} else if (dV == "+/-") {
+		//Execute the operation
+		alert(dV);
+	} else if (dV == "%") {
+		//
+		alert(dV);
+	} else if (dV == "÷") {
+		//
+		alert(dV);
+	} else if (dV == "*") {
+		//
+		alert(dV);
+	} else if (dV == "-") {
+		//
+		alert(dV);
+	} else if (dV == "+") {
+		operator = "+";
+		display.textContent = "";
+		determineNum = 2;
+		alert(dV);
+	} else if (dV == "=") {
+		alert(dV);
+	} else if (dV == ".") {
+		//
+		alert(dV);
+	} else if ((determineNum = 1)) {
+		numbers1 += dV;
+		display.textContent += dV;
+	} else {
+		numbers2 += dV;
+		display.textContent += dV;
+	}
+}
+function executePage() {
+	createPage();
+	buttonDetector();
+}
+executePage();
