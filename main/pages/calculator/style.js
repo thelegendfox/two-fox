@@ -1,16 +1,19 @@
 let dV = ""; //Display Value
+let numDeterminer = 1;
+let numbers1 = "";
+let numbers2 = "";
+let operator = "";
 
 /* What Needs To Be Done */
 /*
 	-When an operator button is hit, make it:
-		1. Save the numbers in the calculator (if none, ignore)
+		(COMPLETE) 1. Save the numbers in the calculator (if none, ignore)
 		2. Clear the display and switch the numbers to another save state
-		3. Perform the operation when the = or another operator is hit.
-		E.g: 1 + 1
-			Save 1 when + is hit (in number1 variable). Switch inputs to number2 variable. 
-			User hits 1 and then the =, and then performs the operation.
-	-Maybe save the operator in a variable and then use if/else if strings to use the operation when = is hit?
-	-Get just the = working first.
+		(COMPLETE) 3. Perform the operation when the = is hit.
+		4. Perform the operation when another operator is hit, and switch back to the other num.
+	-Make display functional.
+	(COMPELTE) -Maybe save the operator in a variable and then use if/else if strings to use the operation when = is hit?
+	(COMPLETE )-Get just the = working first.
 	-Make it open bad apple if the user tries to divide by 0. This is in the future but it's funny.
 */
 
@@ -116,47 +119,84 @@ function buttonDetector() {
 
 function valueDeterminer() {
 	const display = document.querySelector("#display");
-	let numbers1 = "";
-	let numbers2 = "";
 	//Yes this is obscenely long. Sorry.
 	if (dV == "AC") {
 		display.textContent = "";
+		numbers1 = "";
+		numbers2 = "";
+		operator = "";
+		numDeterminer = 1;
 		dV = "";
-		return;
 	} else if (dV == "+/-") {
 		alert(dV);
-		return dV;
+		numDeterminer = 2;
+		operator = dV;
 	} else if (dV == "%") {
 		alert(dV);
-		return dV;
+		numDeterminer = 2;
+		operator = dV;
 	} else if (dV == "÷") {
 		alert(dV);
-		return dV;
+		numDeterminer = 2;
+		operator = dV;
 	} else if (dV == "*") {
 		alert(dV);
-		return dV;
+		numDeterminer = 2;
+		operator = dV;
 	} else if (dV == "-") {
 		alert(dV);
-		return dV;
+		numDeterminer = 2;
+		operator = dV;
 	} else if (dV == "+") {
 		alert(dV);
-		return dV;
+		numDeterminer = 2;
+		operator = dV;
 	} else if (dV == "=") {
 		alert(dV);
-		return dV;
+		numDeterminer = 2;
+		calculate();
 	} else if (dV == ".") {
 		alert(dV);
-		return dV;
-	} else if ((numDeterminer = 1)) {
+		numDeterminer = 2;
+		operator = dV;
+	} else if (numDeterminer == 1) {
 		numbers1 += dV;
 		display.textContent += dV;
-		return;
-	} else if ((numDeterminer = 2)) {
+	} else if (numDeterminer == 2) {
 		numbers2 += dV;
 		display.textContent += dV;
-		return;
+	} else {
+		//
+	}
+	console.log(
+		numbers1 +
+			" num2 " +
+			numbers2 +
+			" numD " +
+			numDeterminer +
+			" operator " +
+			operator
+	);
+}
+
+function calculate() {
+	numbers1 = parseInt(numbers1);
+	numbers2 = parseInt(numbers2);
+	if (numbers1 == undefined || numbers2 == undefined) {
+		console.log("Failed due to num being undefined!");
+		return undefined;
+	}
+	if (operator == "÷") {
+		console.log(numbers1 / numbers2);
+	} else if (operator == "*") {
+		console.log(numbers1 * numbers2);
+	} else if (operator == "-") {
+		console.log(numbers1 - numbers2);
+	} else if (operator == "+") {
+		console.log(numbers1 + numbers2);
 	}
 }
+
 function executePage() {
 	createPage();
 	buttonDetector();
