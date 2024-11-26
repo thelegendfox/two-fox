@@ -1,5 +1,19 @@
 let dV = ""; //Display Value
 
+/* What Needs To Be Done */
+/*
+	-When an operator button is hit, make it:
+		1. Save the numbers in the calculator (if none, ignore)
+		2. Clear the display and switch the numbers to another save state
+		3. Perform the operation when the = or another operator is hit.
+		E.g: 1 + 1
+			Save 1 when + is hit (in number1 variable). Switch inputs to number2 variable. 
+			User hits 1 and then the =, and then performs the operation.
+	-Maybe save the operator in a variable and then use if/else if strings to use the operation when = is hit?
+	-Get just the = working first.
+	-Make it open bad apple if the user tries to divide by 0. This is in the future but it's funny.
+*/
+
 function createPage() {
 	let num = 0;
 	//Adds the grid tokens (except for the ones below)
@@ -84,9 +98,6 @@ function buttonDetector() {
 		let idVal = "#el" + i;
 		let listenerItem = document.querySelector(idVal);
 		listenerItem.addEventListener("click", () => {
-			//TO BE DETERMINED
-			//alert("HelloWorld " + listenerItem.textContent);
-			//displayText += listenerItem.textContent;
 			dV = listenerItem.textContent; //Display Value
 			valueDeterminer();
 			return listenerItem.textContent;
@@ -96,9 +107,6 @@ function buttonDetector() {
 		let idVal = "#manEl" + i;
 		let listenerItem = document.querySelector(idVal);
 		listenerItem.addEventListener("click", () => {
-			//TO BE DETERMINED
-			//alert("HelloWorld " + listenerItem.textContent);
-			//displayText += listenerItem.textContent;
 			dV = listenerItem.textContent; //Display Value
 			valueDeterminer();
 			return listenerItem.textContent;
@@ -106,48 +114,47 @@ function buttonDetector() {
 	}
 }
 
-/* To Be Done: Make operators work. Make it switch nums automatically and make the operators dynamic for the = sign.*/
-
 function valueDeterminer() {
 	const display = document.querySelector("#display");
-	let determineNum = 1;
 	let numbers1 = "";
 	let numbers2 = "";
-	operator = "";
 	//Yes this is obscenely long. Sorry.
 	if (dV == "AC") {
 		display.textContent = "";
+		dV = "";
+		return;
 	} else if (dV == "+/-") {
-		//Execute the operation
 		alert(dV);
+		return dV;
 	} else if (dV == "%") {
-		//
 		alert(dV);
+		return dV;
 	} else if (dV == "÷") {
-		//
 		alert(dV);
+		return dV;
 	} else if (dV == "*") {
-		//
 		alert(dV);
+		return dV;
 	} else if (dV == "-") {
-		//
 		alert(dV);
+		return dV;
 	} else if (dV == "+") {
-		operator = "+";
-		display.textContent = "";
-		determineNum = 2;
 		alert(dV);
+		return dV;
 	} else if (dV == "=") {
 		alert(dV);
+		return dV;
 	} else if (dV == ".") {
-		//
 		alert(dV);
-	} else if ((determineNum = 1)) {
+		return dV;
+	} else if ((numDeterminer = 1)) {
 		numbers1 += dV;
 		display.textContent += dV;
-	} else {
+		return;
+	} else if ((numDeterminer = 2)) {
 		numbers2 += dV;
 		display.textContent += dV;
+		return;
 	}
 }
 function executePage() {
