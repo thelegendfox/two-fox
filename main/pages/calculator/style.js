@@ -3,17 +3,19 @@ let numDeterminer = 1;
 let numbers1 = "";
 let numbers2 = "";
 let operator = "";
+let sum = "";
 
 /* What Needs To Be Done */
 /*
 	-When an operator button is hit, make it:
 		(COMPLETE) 1. Save the numbers in the calculator (if none, ignore)
-		2. Clear the display and switch the numbers to another save state
+		(COMPLETE) 2. Clear the display and switch the numbers to another save state
 		(COMPLETE) 3. Perform the operation when the = is hit.
-		4. Perform the operation when another operator is hit, and switch back to the other num.
-	-Make display functional.
+		(COMPLETE) 4. Perform the operation when another operator is hit, and switch back to the other num.
+	(COMPLETE) -Make display functional.
 	(COMPELTE) -Maybe save the operator in a variable and then use if/else if strings to use the operation when = is hit?
-	(COMPLETE )-Get just the = working first.
+	(COMPLETE) -Get just the = working first.
+	-Make it so that the sum is actually saved inside the num variables (e.g. if sum is 12 and numDeterminer is 2, save 12 in numbers1)
 	-Make it open bad apple if the user tries to divide by 0. This is in the future but it's funny.
 */
 
@@ -128,36 +130,24 @@ function valueDeterminer() {
 		numDeterminer = 1;
 		dV = "";
 	} else if (dV == "+/-") {
-		alert(dV);
-		numDeterminer = 2;
 		operator = dV;
 	} else if (dV == "%") {
-		alert(dV);
-		numDeterminer = 2;
 		operator = dV;
 	} else if (dV == "÷") {
-		alert(dV);
-		numDeterminer = 2;
+		calculate();
 		operator = dV;
 	} else if (dV == "*") {
-		alert(dV);
-		numDeterminer = 2;
+		calculate();
 		operator = dV;
 	} else if (dV == "-") {
-		alert(dV);
-		numDeterminer = 2;
+		calculate();
 		operator = dV;
 	} else if (dV == "+") {
-		alert(dV);
-		numDeterminer = 2;
+		calculate();
 		operator = dV;
 	} else if (dV == "=") {
-		alert(dV);
-		numDeterminer = 2;
 		calculate();
 	} else if (dV == ".") {
-		alert(dV);
-		numDeterminer = 2;
 		operator = dV;
 	} else if (numDeterminer == 1) {
 		numbers1 += dV;
@@ -179,21 +169,74 @@ function valueDeterminer() {
 	);
 }
 
-function calculate() {
+function calculateOp() {
+	if (numbers1 == "") {
+		numbers1 = "0";
+		console.log("Replaced numbers1 " + numbers1);
+	} else if (numbers2 == "") {
+		numbers2 = "0";
+		console.log("Replaced numbers2 " + numbers2 + " <-- numbers2");
+	}
 	numbers1 = parseInt(numbers1);
 	numbers2 = parseInt(numbers2);
-	if (numbers1 == undefined || numbers2 == undefined) {
-		console.log("Failed due to num being undefined!");
-		return undefined;
+
+	calculate();
+	switchNumDet();
+}
+
+function calculate() {
+	console.log("Executed calculate funct");
+	if (numbers1 == "") {
+		numbers1 = 0;
+		console.log("Replaced numbers1 " + numbers1);
+	} else if (numbers2 == "") {
+		numbers2 = 0;
+		console.log("Replaced numbers2 " + numbers2);
+	} else {
+		numbers1 = parseInt(numbers1);
+		numbers2 = parseInt(numbers2);
 	}
+
+	console.log(numbers1 + " " + numbers2 + " Numbers1 and 2");
+
+	switchNumDet();
+	console.log("switchNumDet()");
 	if (operator == "÷") {
+		display.textContent = numbers1 / numbers2;
 		console.log(numbers1 / numbers2);
+		sum = numbers1 / numbers2;
 	} else if (operator == "*") {
+		display.textContent = numbers1 * numbers2;
 		console.log(numbers1 * numbers2);
+		sum = numbers1 * numbers2;
 	} else if (operator == "-") {
+		display.textContent = numbers1 - numbers2;
 		console.log(numbers1 - numbers2);
+		sum = numbers1 - numbers2;
 	} else if (operator == "+") {
+		display.textContent = numbers1 + numbers2;
 		console.log(numbers1 + numbers2);
+		sum = numbers1 + numbers2;
+	}
+}
+
+function switchNumDet() {
+	console.log(parseInt(sum) + " sum parsed in switchNumDet");
+	if (numDeterminer == 1 && sum !== 0) {
+		numDeterminer = 2;
+		numbers1 = sum;
+	} else if (numDeterminer == 2 && sum !== 0) {
+		numDeterminer = 1;
+		numbers2 = sum;
+	} else if (numDeterminer == 1 && sum == undefined) {
+		numDeterminer = 2;
+	} else if (numDeterminer == 2 && sum == undefined) {
+		numDeterminer = 1;
+	} else {
+		numDeterminer = 1;
+		console.log(
+			"CRITICAL ERROR WHAT DID YOU DO WHY IS NUMDETERMINER NOT 1 OR 2"
+		);
 	}
 }
 
