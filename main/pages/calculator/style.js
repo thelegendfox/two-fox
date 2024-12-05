@@ -4,7 +4,8 @@ let lastPressedChar = "";
 let numbers1 = "";
 let numbers2 = "";
 let operator = "";
-let sum = "";
+let sum = 0;
+let sumParsed = 0;
 
 /* What Needs To Be Done */
 /*
@@ -16,10 +17,16 @@ let sum = "";
 	(COMPLETE) -Make display functional.
 	(COMPELTE) -Maybe save the operator in a variable and then use if/else if strings to use the operation when = is hit?
 	(COMPLETE) -Get just the = working first.
-	-Make it so that the sum is actually saved inside the num variables (e.g. if sum is 12 and numDeterminer is 2, save 12 in numbers1)
-	-Find a way to have lastPressedChar let you define operators as operators
-	-Delete display text if the lastPressedChar is an operator and the next is a number.
-	-Make it open bad apple if the user tries to divide by 0. This is in the future but it's funny.
+	(COMPLETE) -Make it so that the sum is actually saved inside the num variables (e.g. if sum is 12 and numDeterminer is 2, save 12 in numbers1)
+	(COMPLETE) -Find a way to have lastPressedChar let you define operators as operators
+	(COMPLETE) -Delete display text if the lastPressedChar is an operator and the next is a number.
+	(COMPLETE) -Make it open bad apple if the user tries to divide by 0. This is in the future but it's funny.
+	-Let you change numbers to negative.
+	-Let you use decimals.
+	-Add keyboard support.
+	-Add percentage support.
+	-Optimize code.
+	-Add more comments.
 */
 
 function createPage() {
@@ -127,12 +134,26 @@ function buttonDetector() {
 function valueDeterminer() {
 	const display = document.querySelector("#display");
 	//Yes this is obscenely long. Sorry.
+	if (
+		lastPressedChar == "+" ||
+		lastPressedChar == "-" ||
+		lastPressedChar == "/" ||
+		lastPressedChar == "*" ||
+		lastPressedChar == "=" ||
+		lastPressedChar == "÷"
+	) {
+		display.textContent = "";
+		console.log("reset text of display");
+	}
 	if (dV == "AC") {
 		display.textContent = "";
 		numbers1 = "";
 		numbers2 = "";
 		operator = "";
+		lastPressedChar = "";
 		numDeterminer = 1;
+		sum = 0;
+		sumParsed = 0;
 		dV = "";
 	} else if (dV == "+/-") {
 		operator = dV;
@@ -176,7 +197,6 @@ function valueDeterminer() {
 }
 
 function calculate() {
-	console.log("Executed calculate funct");
 	if (numbers1 == "") {
 		numbers1 = 0;
 		console.log("Replaced numbers1 with " + numbers1);
@@ -188,14 +208,17 @@ function calculate() {
 		numbers2 = parseInt(numbers2);
 	}
 
-	console.log(numbers1 + " numbers1 " + numbers2 + " numbers2");
-
 	switchNumDet();
 	console.log("switched numbers function");
 	if (operator == "÷") {
-		display.textContent = numbers1 / numbers2;
 		console.log(numbers1 / numbers2 + " CALCULATED");
 		sum = numbers1 / numbers2;
+		if (sum == Infinity) {
+			window.location.href = "https://www.youtube.com/watch?v=9lNZ_Rnr7Jc";
+			//plays if you divide by 0.
+			//Well, actually it plays if any division-thing equals infinity, but that still works for anything divided by 0.
+			//This is Bad Apple, by the way.
+		} else display.textContent = numbers1 / numbers2;
 	} else if (operator == "*") {
 		display.textContent = numbers1 * numbers2;
 		console.log(numbers1 * numbers2 + " CALCULATED");
@@ -209,11 +232,19 @@ function calculate() {
 		console.log(numbers1 + numbers2 + " CALCULATED");
 		sum = numbers1 + numbers2;
 	}
+	console.log(
+		parseInt(sum) + " sum parsed in calculate " + sum + " normal Sum"
+	);
+	sumParsed = parseInt(sum);
+	numDeterminer = 2;
+	if (sumParsed !== 0) {
+		numbers1 = sum;
+		numbers2 = "0";
+		console.log("Numbers1 should equal the sum now " + sumParsed);
+	}
 }
 
 function switchNumDet() {
-	console.log(parseInt(sum) + " sum parsed in switchNumDet");
-
 	if (numDeterminer == 1) {
 		numDeterminer = 2;
 	} else if (numDeterminer == 2) {
