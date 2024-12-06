@@ -4,7 +4,7 @@
 let page1Button = document.getElementById("page1").value;
 let page2Button = document.getElementById("page2").value;
 let page3Button = document.getElementById("page3").value;
-let page4Button = document.querySelector("#page4").value;
+let page4Button = document.getElementById("page4").value;
 
 function redirectToLandingPage() {
 	window.location.href = page1Button;
