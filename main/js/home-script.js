@@ -4,6 +4,7 @@
 let page1Button = document.getElementById("page1").value;
 let page2Button = document.getElementById("page2").value;
 let page3Button = document.getElementById("page3").value;
+let page4Button = document.querySelector("#page4").value;
 
 function redirectToLandingPage() {
 	window.location.href = page1Button;
@@ -17,6 +18,11 @@ function redirectToRPSPage() {
 
 function redirectToETSPage() {
 	window.location.href = page3Button;
+	console.log("redirected");
+}
+
+function redirectToCalcPage() {
+	window.location.href = page4Button;
 	console.log("redirected");
 }
 
