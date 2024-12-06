@@ -6,6 +6,8 @@ let numbers2 = "";
 let operator = "";
 let sum = 0;
 let sumParsed = 0;
+let sumParsedStr = "";
+let hasDecimal = 0;
 
 /* What Needs To Be Done */
 /*
@@ -21,12 +23,11 @@ let sumParsed = 0;
 	(COMPLETE) -Find a way to have lastPressedChar let you define operators as operators
 	(COMPLETE) -Delete display text if the lastPressedChar is an operator and the next is a number.
 	(COMPLETE) -Make it open bad apple if the user tries to divide by 0. This is in the future but it's funny.
-	-Let you change numbers to negative.
-	-Let you use decimals.
-	-Add keyboard support.
-	-Add percentage support.
-	-Optimize code.
-	-Add more comments.
+	(COMPLETE) -Let you change numbers to negative.
+	(COMPLETE) -Let you use decimals.
+	(ABORTED) -Add percentage support.
+	-Add keyboard support (seems very complex so i might not do it)
+	-Optimize code(!!!!!)
 */
 
 function createPage() {
@@ -105,6 +106,7 @@ function createPage() {
 		document.querySelector("#el12").textContent = "-";
 		document.querySelector("#el16").textContent = "+";
 	}
+	display.textContent.replace(/[\n\t\r ]+/g, " ").trim();
 }
 
 function buttonDetector() {
@@ -129,11 +131,13 @@ function buttonDetector() {
 			return listenerItem.textContent;
 		});
 	}
+	display.textContent.replace(/[\n\t\r ]+/g, " ").trim();
 }
 
 function valueDeterminer() {
 	const display = document.querySelector("#display");
 	//Yes this is obscenely long. Sorry.
+	display.textContent.replace(/[\n\t\r ]+/g, " ").trim();
 	if (
 		lastPressedChar == "+" ||
 		lastPressedChar == "-" ||
@@ -143,10 +147,12 @@ function valueDeterminer() {
 		lastPressedChar == "÷"
 	) {
 		display.textContent = "";
+		hasDecimal = 0;
 		console.log("reset text of display");
 	}
 	if (dV == "AC") {
 		display.textContent = "";
+		hasDecimal = 0;
 		numbers1 = "";
 		numbers2 = "";
 		operator = "";
@@ -156,9 +162,21 @@ function valueDeterminer() {
 		sumParsed = 0;
 		dV = "";
 	} else if (dV == "+/-") {
-		operator = dV;
+		if (numbers1.charAt(10) == "-" || numbers1.charAt(10) == "-") {
+			//
+		} else {
+			if (numDeterminer == 1) {
+				numbers1 = "-" + numbers1;
+				display.textContent = "-" + display.textContent;
+			} else if (numDeterminer == 2) {
+				numbers1 = "-" + numbers2;
+				display.textContent = "-" + display.textContent;
+			}
+		}
 	} else if (dV == "%") {
-		operator = dV;
+		console.log(
+			"This sets everything to 0 in all my calculators so... i'm not gonna touch that"
+		);
 	} else if (dV == "÷") {
 		calculate();
 		operator = dV;
@@ -174,13 +192,34 @@ function valueDeterminer() {
 	} else if (dV == "=") {
 		calculate();
 	} else if (dV == ".") {
-		operator = dV;
+		//If the text doesn't have a decimal...
+		if (hasDecimal == 0) {
+			hasDecimal = 1;
+			if (numDeterminer == 1) {
+				//...make it say it has a decimal, and then add it.
+				numbers1 += dV; //Can't add decimal if it already has it.
+				display.textContent += dV;
+			} else if (numDeterminer == 2) {
+				numbers2 += dV;
+				display.textContent += dV;
+			}
+		}
 	} else if (numDeterminer == 1) {
-		numbers1 += dV;
-		display.textContent += dV;
+		if (display.textContent.length <= 20) {
+			numbers1 += dV;
+			display.textContent += dV;
+		} else {
+			console.log("too many chars");
+			return;
+		}
 	} else if (numDeterminer == 2) {
-		numbers2 += dV;
-		display.textContent += dV;
+		if (display.textContent.length <= 11) {
+			numbers2 += dV;
+			display.textContent += dV;
+		} else {
+			console.log("too many chars");
+			return;
+		}
 	} else {
 		//
 	}
@@ -194,9 +233,11 @@ function valueDeterminer() {
 			" operator " +
 			operator
 	);
+	display.textContent.replace(/[\n\t\r ]+/g, " ").trim();
 }
 
 function calculate() {
+	display.textContent.replace(/[\n\t\r ]+/g, " ").trim();
 	if (numbers1 == "") {
 		numbers1 = 0;
 		console.log("Replaced numbers1 with " + numbers1);
@@ -204,8 +245,8 @@ function calculate() {
 		numbers2 = 0;
 		console.log("Replaced numbers2 with " + numbers2);
 	} else {
-		numbers1 = parseInt(numbers1);
-		numbers2 = parseInt(numbers2);
+		numbers1 = parseFloat(numbers1);
+		numbers2 = parseFloat(numbers2);
 	}
 
 	switchNumDet();
@@ -213,6 +254,7 @@ function calculate() {
 	if (operator == "÷") {
 		console.log(numbers1 / numbers2 + " CALCULATED");
 		sum = numbers1 / numbers2;
+		addSumToDisplay();
 		if (sum == Infinity) {
 			window.location.href = "https://www.youtube.com/watch?v=9lNZ_Rnr7Jc";
 			//plays if you divide by 0.
@@ -220,27 +262,48 @@ function calculate() {
 			//This is Bad Apple, by the way.
 		} else display.textContent = numbers1 / numbers2;
 	} else if (operator == "*") {
-		display.textContent = numbers1 * numbers2;
 		console.log(numbers1 * numbers2 + " CALCULATED");
 		sum = numbers1 * numbers2;
+		addSumToDisplay();
 	} else if (operator == "-") {
-		display.textContent = numbers1 - numbers2;
 		console.log(numbers1 - numbers2 + " CALCULATED");
 		sum = numbers1 - numbers2;
+		addSumToDisplay();
 	} else if (operator == "+") {
-		display.textContent = numbers1 + numbers2;
 		console.log(numbers1 + numbers2 + " CALCULATED");
 		sum = numbers1 + numbers2;
+		addSumToDisplay();
 	}
+
 	console.log(
-		parseInt(sum) + " sum parsed in calculate " + sum + " normal Sum"
+		parseFloat(sum) + " sum parsed in calculate " + sum + " normal Sum"
 	);
-	sumParsed = parseInt(sum);
+	sumParsed = parseFloat(sum);
 	numDeterminer = 2;
 	if (sumParsed !== 0) {
 		numbers1 = sum;
 		numbers2 = "0";
 		console.log("Numbers1 should equal the sum now " + sumParsed);
+	}
+	display.textContent.replace(/[\n\t\r ]+/g, " ").trim();
+}
+
+function addSumToDisplay() {
+	sumParsed = parseFloat(sum);
+	display.textContent = "";
+	sumParsedStr = sumParsed.toString();
+	for (let i = 0; i < sumParsedStr.length && i < 12; i++) {
+		display.textContent += sumParsedStr.charAt(i);
+	}
+}
+
+function testDisplay() {
+	//Legacy testing function made to check if it automatically cuts off the sum being added
+	//if there are too many characters.
+	let testNum = "123456789123456789";
+	for (let i = 0; i < testNum.length && i < 12; i++) {
+		console.log(testNum.charAt(i) + " " + i + " ");
+		display.textContent += testNum.charAt(i);
 	}
 }
 
