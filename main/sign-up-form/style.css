@@ -1,0 +1,38 @@
+html,
+body {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+}
+.background-container {
+	width: 30vw;
+	height: 100vh;
+	border: 1px solid white;
+}
+.signup-page-container {
+	width: 70vw;
+	height: 100vh;
+	border: 1px solid white;
+}
+.head-container {
+	border: 1px solid blue;
+	height: 30vh;
+}
+.head-text {
+	font-size: xx-large;
+	margin-top: 10vh;
+	margin-bottom: 20vh;
+	margin-left: 2%;
+	margin-right: 2%;
+}
+.signup-options-container {
+	border: 1px solid hotpink;
+	height: 40vh;
+}
+.options-header {
+	font-size: x-large;
+	margin: 2%;
+}
