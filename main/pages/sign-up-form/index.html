@@ -10,8 +10,12 @@
 	</head>
 	<body>
 		<div class="background-container">
-			<div class="background-img"></div>
-			<div class="background-text">Hello World</div>
+			<div class="background-img">
+				<div class="background-text">
+					<img src="./fop.png" alt="A smol fop. I have no clue what else to put here." class="background-text-img">
+					<span class="background-text-content">Legendfox</span>
+				</div>
+			</div>
 		</div>
 		<div class="signup-page-container">
 			<div class="head-container">
@@ -23,49 +27,48 @@
 			<div class="signup-options-container">
 				<div class="options-header">Hello World![OptionsHeader]</div>
 				<div class="options">
-					<form></form>
 					<!-- container of items?? -->
 					<div class="option-box">
-						
 						<div class="option-container">
-								<label class="option-txt" for="TBD">Hello World</label><br />
-								<input class="option-input" type="text" for="tbd" />
+								<label class="option-txt" for="TBD">First Name</label><br />
+								<input class="option-input" id="option-input-1" type="text" for="tbd" required/>
 						</div>
 						<div class="option-container">
-								<label class="option-txt" for="TBD">Hello World</label><br />
-								<input class="option-input" type="text" for="tbd" />
-						</div>
-					</div>
-					<div class="option-box">
-						<div class="option-container">
-								<label class="option-txt" for="TBD">Hello World</label><br />
-								<input class="option-input" type="text" for="tbd" />
-						</div>
-						<div class="option-container">
-								<label class="option-txt" for="TBD">Hello World</label><br />
-								<input class="option-input" type="text" for="tbd" />
+								<label class="option-txt" for="TBD">Last Name</label><br />
+								<input class="option-input" id="option-input-2" type="text" for="tbd" required/>
 						</div>
 					</div>
 					<div class="option-box">
 						<div class="option-container">
-								<label class="option-txt" for="TBD">Hello World</label><br />
-								<input class="option-input" type="text" for="tbd" />
+								<label class="option-txt" for="TBD">Email</label><br />
+								<input class="option-input" id="option-input-3" type="email" for="tbd" required/>
 						</div>
 						<div class="option-container">
-								<label class="option-txt" for="TBD">Hello World</label><br />
-								<input class="option-input" type="text" for="tbd" />
+								<label class="option-txt" for="TBD">Social Security Number</label><br />
+								<input class="option-input" id="option-input-4" type="password" for="tbd" required/>
 						</div>
 					</div>
-
+					<div class="option-box">
+						<div class="option-container">
+								<label class="option-txt" for="TBD">Passport Authorization Number</label><br />
+								<input class="option-input" id="option-input-5" type="password" for="tbd" required/>
+						</div>
+						<div class="option-container">
+								<label class="option-txt" for="TBD">Location (Lat/Long)</label><br />
+								<input class="option-input" id="option-input-6" type="password" for="tbd" required/>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="foot-container">
-				<input type="submit" class="create-button" value="aeiou">
+				<div class="create-button-container"><input type="submit" class="create-button" value="Create Account" id="create-button"></div>
+				</form>
 				<div class="login-prompt">
-					Already have an account? <a href="#">Log in here.</a>
+					Already have an account? <a href="#" class="link">Log in here.<br></a>
+					<div>Disclaimer: None of your information is stored. This is a project. Don't put your actual social security number or anything here, though</div>
 				</div>
-									</form>
 			</div>
 		</div>
+		<script src="./style.js"></script>
 	</body>
 </html>

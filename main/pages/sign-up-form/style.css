@@ -12,18 +12,40 @@ button {
 	margin: 0px;
 	border: 0px;
 }
-a {
-	color: blue !important;
+
+.background-img {
+	background-image: url("./xcor\ lynx.jpg");
+	background-position: 70%;
+	width: 30vw;
+	height: 100vh;
 }
 .background-container {
 	width: 30vw;
 	height: 100vh;
-	border: 1px solid white;
+	display: flex;
+	flex-direction: column;
+}
+.background-text {
+	background-color: rgba(0, 0, 0, 0.5);
+	margin-top: 30%;
+	height: 30%;
+	padding: 0px 20px 0px 20px;
+	justify-content: right;
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+}
+.background-text-img {
+	width: 30%;
+	margin-right: auto;
+}
+.background-text-content {
+	background-color: transparent;
+	font-size: 60px;
 }
 .signup-page-container {
 	width: 70vw;
 	height: 100vh;
-	border: 1px solid white;
 }
 .head-container {
 	border: 1px solid blue;
@@ -37,51 +59,93 @@ a {
 	margin-right: 2%;
 }
 .signup-options-container {
-	border: 1px solid hotpink;
-	height: 40vh;
+	position: relative;
+	z-index: 1;
+	background-color: rgb(20, 20, 20);
+	height: 38vh;
+	padding-top: 2vh;
+	box-shadow: 0px 5px 5px black;
 }
 .options-header {
+	background-color: rgb(20, 20, 20);
 	font-size: x-large;
 	margin: 2%;
 }
 .options {
+	background-color: rgb(20, 20, 20);
 	display: flex;
 	flex-direction: row;
 	width: 50vw;
 	margin: 2%;
 }
 .option-container {
+	background-color: rgb(20, 20, 20);
 	margin-top: 10%;
 }
 .option-box {
+	background-color: rgb(20, 20, 20);
 	display: flex;
 	flex-direction: column;
 	margin-right: 2%;
 }
 .option-input {
+	background-color: rgb(25, 25, 25);
 	height: 3vh;
 	width: 20vw;
-	border: 1px solid red;
+	border-radius: 5px;
+	border: 2px solid rgb(30, 30, 30);
 	outline: none;
 }
+.option-txt {
+	background-color: rgb(20, 20, 20);
+}
 .option-input:focus {
-	border: 1px solid cyan;
+	transition: all 0.1s ease-in-out;
+	border: 2px solid rgb(35, 35, 35);
+	background-color: rgb(30, 30, 30);
 }
 .option-input:hover {
-	border: 1px solid blue;
+	transition: all 0.1s ease-in-out;
+	border: 2px solid rgb(35, 35, 35);
+	background-color: rgb(30, 30, 30);
+}
+.option-input:invalid {
+	border: 2px solid rgb(133, 0, 0);
 }
 .foot-container {
 	height: 30vh;
+	display: flex;
+	flex-direction: column;
 }
-.create-button {
-	background-color: rgb(0, 0, 0) /* IN THE FUTURE Will be another color. */;
-	border: 1px solid white;
-	border-radius: 10px;
-	box-shadow: 2px 2px 2px rgb(87, 87, 87);
+.create-button-container {
 	width: 20%;
 	height: 20%;
 	margin: 2% 2% 2% 2%;
+	justify-content: center;
+	align-items: center;
+}
+.create-button {
+	background-color: rgb(30, 30, 30);
+	border: 2px solid rgb(35, 35, 35);
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px black;
+	width: 100%;
+	height: 100%;
 	font-size: large;
+	cursor: pointer;
+}
+.create-button:hover {
+	transition: all 0.05s ease-in-out;
+	background-color: rgb(25, 25, 25);
+	border: 2px solid rgb(25, 25, 25);
+}
+.create-button:active {
+	transition: all 0.05s ease-in-out;
+	background-color: rgb(20, 20, 20);
+	border: 2px solid rgb(25, 25, 25);
+	box-shadow: none;
+	transform-origin: center;
+	transform: scale(0.95);
 }
 .login-prompt {
 	margin: 0% 0% 0% 2%;
