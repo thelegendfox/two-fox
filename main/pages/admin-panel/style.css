@@ -1,0 +1,41 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+.centered {
+	justify-self: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+.sidebar-item {
+	justify-self: center;
+	margin-left: auto;
+	margin-right: auto;
+	/* border: 2px solid white;
+	border-radius: 5px; */
+	border: 0px;
+	font-size: medium;
+}
+.margintop10 {
+	margin-top: 10%;
+}
+.grid-container {
+	display: grid;
+	overflow: auto;
+	grid-template-rows: repeat(1fr);
+	grid-template-columns: 1;
+	gap: 5px;
+}
+.sidebar-container {
+	border: 1px solid white;
+	width: 20%;
+	height: 100%;
+}
+.sidebar-content {
+	display: flex;
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+	margin-right: auto;
+}
