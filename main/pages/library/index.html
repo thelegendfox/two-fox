@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="../../css/darkmode.css" />
+		<link rel="stylesheet" href="../../css/stylefont.css" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Library</title>
+	</head>
+	<body>
+		<script>
+			0;
+		</script>
+		<div class="input-menu">
+			<div class="alert-menu">
+				<div class="alert-info-box">
+					<span class="alert-info-box-text">Alerts</span>
+					<span class="alert-info-box-icon"></span>
+				</div>
+				<span class="alert-menu-container">
+					This section was originally intended for showing alerts (such as "Too
+					many Characters"). However, due to complications, I've abandoned it.
+					But it does look cool!
+				</span>
+			</div>
+			<form id="input-form">
+				<span class="form-option">
+					<label class="label" for="title">Title:</label><br />
+					<input type="text" class="form-input" id="title" required />
+				</span>
+
+				<span class="form-option">
+					<label class="label" for="author">Author:</label><br />
+					<input type="text" class="form-input" id="author" required />
+				</span>
+
+				<span class="form-option">
+					<label class="label" for="rdate">Release Date:</label><br />
+					<input type="date" class="form-input" id="release" required />
+				</span>
+
+				<span class="form-option">
+					<label class="label" for="pnum">Page Number:</label><br />
+					<input type="number" class="form-input" id="pagenum" required />
+				</span>
+
+				<span class="form-option">
+					<label class="label" for="read">Is Read:</label><br />
+					<input type="checkbox" class="form-input" id="read" />
+				</span>
+
+				<span class="form-button">
+					<input
+						type="submit"
+						class="submit-button"
+						id="submit"
+						value="Add Book"
+					/>
+				</span>
+			</form>
+		</div>
+		<div class="books-list" id="books-list"></div>
+		<script src="./main.js"></script>
+	</body>
+</html>
