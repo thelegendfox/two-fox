@@ -19,16 +19,14 @@ let bookTitle = null;
 let bookAuthor = null;
 let bookReleaseDate = null;
 let bookPageNum = null;
-let bookIsRead = null;
 let bookSubmit = document.querySelector("#submit");
 let form = document.querySelector("#input-form");
 
-function Book(title, author, release, pages, read) {
+function Book(title, author, release, pages) {
 	this.title = title;
 	this.author = author;
 	this.release = release;
 	this.pages = pages;
-	this.read = read;
 }
 
 bookSubmit.addEventListener("click", function (event) {
@@ -37,7 +35,6 @@ bookSubmit.addEventListener("click", function (event) {
 	bookAuthor = document.querySelector("#author").value;
 	bookReleaseDate = document.querySelector("#release").value;
 	bookPageNum = document.querySelector("#pagenum").value;
-	bookIsRead = document.querySelector("#read").checked;
 
 	if (
 		bookTitle.length > 20 ||
@@ -50,15 +47,30 @@ bookSubmit.addEventListener("click", function (event) {
 		return;
 	}
 
-	addBook(
-		new Book(bookTitle, bookAuthor, bookReleaseDate, bookPageNum, bookIsRead)
+	if (
+		bookTitle.length == 0 ||
+		bookAuthor.length == 0 ||
+		bookReleaseDate.length == 0 ||
+		bookPageNum.length == 0
+	) {
+		alert("All values must be filled.");
+		return;
+	}
+
+	alert(
+		"For security purposes, you cannot add books. To see how this works, delete the `return` statement on Line 61."
 	);
+	return;
+
+	addBook(new Book(bookTitle, bookAuthor, bookReleaseDate, bookPageNum));
 	console.log(bookTitle);
 });
 
 function addBook(book) {
 	const bookContainer = document.querySelector("#books-list");
 	const element = document.createElement("div");
+	let checkbox = document.createElement("input");
+	checkbox.type = "checkbox";
 
 	bookContainer.appendChild(element);
 	element.classList.add("book");
@@ -67,7 +79,6 @@ function addBook(book) {
 	let author = book.author + "\xa0".repeat(20 - book.author.length);
 	let release = book.release + "\xa0".repeat(20 - book.release.length);
 	let pages = book.pages + "\xa0".repeat(20 - book.pages.length);
-	// let read = book.read + "\xa0".repeat(19 - book.read.length);
 	// adds spaces to the title so it's always 20~ chars
 
 	element.textContent =
@@ -79,6 +90,6 @@ function addBook(book) {
 		release +
 		" | Pages: " +
 		pages +
-		" | Is Read: " +
-		book.read;
+		" | Is Read: ";
+	element.appendChild(checkbox);
 }
