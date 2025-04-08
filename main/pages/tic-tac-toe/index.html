@@ -15,11 +15,38 @@
 
 		<!--  -->
 
-		<img
-			src="./tic tac toe (delete after).png"
-			style="aspect-ratio: native; height: 50%"
-		/>
+		<div id="left-bar">
+			<form id="name-input-form">
+				<label id="input-form-label">Enter your Names</label>
+				<input
+					type="text"
+					class="player-name-input"
+					placeholder="Player 1..."
+				/>
+				<input
+					type="text"
+					class="player-name-input"
+					placeholder="Player 2..."
+				/>
+				<input type="submit" value="Submit" id="submit-button" />
+			</form>
+			<div id="name-container">
+				<div class="player-names"></div>
+				<!-- MAX 20 -->
+				<div class="player-names"></div>
+			</div>
 
+			<button id="end-round">End Round Button</button>
+			<button id="confirm">Confirm Button</button>
+		</div>
+		<div id="right-box">
+			<div id="top-bar">
+				Top Bar
+				<div id="player-1-score">Player 1 Score</div>
+				<div id="player-2-score">Player 2 Score</div>
+			</div>
+			<div id="turn-box">Turn Box</div>
+		</div>
 		<script src="./main.js"></script>
 	</body>
 </html>
